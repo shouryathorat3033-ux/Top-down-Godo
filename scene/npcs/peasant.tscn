@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://b333l31ix8eqq"]
+
+[ext_resource type="Script" path="res://script/npcs/NPC.gd" id="1_npc"]
+[ext_resource type="Texture2D" uid="uid://peasantidle" path="res://assets/images/Npc's/Citizen_F/Peasant_A/Idle/Idle-Sheet.png" id="2_peasant_idle"]
+[ext_resource type="Texture2D" uid="uid://peasantwalk" path="res://assets/images/Npc's/Citizen_F/Peasant_A/Walk/Walk-Sheet.png" id="3_peasant_walk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pidle0"]
+atlas = ExtResource("2_peasant_idle")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pidle1"]
+atlas = ExtResource("2_peasant_idle")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pidle2"]
+atlas = ExtResource("2_peasant_idle")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pidle3"]
+atlas = ExtResource("2_peasant_idle")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_peasant"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pidle0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pidle1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pidle2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pidle3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_peasant"]
+radius = 14.0
+height = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_peasant_int"]
+radius = 60.0
+
+[node name="NPC_Peasant" type="CharacterBody2D"]
+script = ExtResource("1_npc")
+dialogue_lines = Array[String](["Welcome, brave adventurer!", "Monsters have overrun the eastern woods.", "There is an ancient chest hidden to the south. Seek it out!"])
+npc_name = "Peasant Greta"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_peasant")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("CapsuleShape2D_peasant")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_peasant_int")
+
+[node name="InteractionLabel" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -50.0
+offset_right = 30.0
+offset_bottom = -30.0
+theme_override_font_sizes/font_size = 12
+text = "[E] Talk"
+horizontal_alignment = 1
+
+[node name="DialogueBox" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="DialogueBox"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -140.0
+offset_right = 300.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBox" type="VBoxContainer" parent="DialogueBox/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = -16.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NameLabel" type="Label" parent="DialogueBox/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.2, 1)
+theme_override_font_sizes/font_size = 16
+text = "Name"
+
+[node name="TextLabel" type="Label" parent="DialogueBox/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Dialogue text goes here..."
+autowrap_mode = 2
+
+[node name="HintLabel" type="Label" parent="DialogueBox/Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -25.0
+offset_right = -10.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 11
+text = "[E] Continue"

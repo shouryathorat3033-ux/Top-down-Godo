@@ -96,6 +96,11 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play(anim_run)
 			if dir.x != 0:
 				animated_sprite.flip_h = dir.x < 0
+
+		# Check contact damage with player
+		if global_position.distance_to(player.global_position) < 40.0:
+			if player.has_method("receive_damage"):
+				player.receive_damage(damage_to_player)
 	else:
 		velocity = Vector2.ZERO
 		if animated_sprite:

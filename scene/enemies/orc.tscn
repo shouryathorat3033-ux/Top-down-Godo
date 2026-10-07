@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://orcenemy001"]
+
+[ext_resource type="Script" path="res://script/enemies/Orc.gd" id="1_orc"]
+[ext_resource type="Texture2D" uid="uid://orcidle" path="res://assets/images/Mobs/Orc Crew/Orc/Idle/Idle-Sheet.png" id="2_orc_idle"]
+[ext_resource type="Texture2D" uid="uid://orcrun" path="res://assets/images/Mobs/Orc Crew/Orc/Run/Run-Sheet.png" id="3_orc_run"]
+[ext_resource type="Texture2D" uid="uid://orcdeath" path="res://assets/images/Mobs/Orc Crew/Orc/Death/Death-Sheet.png" id="4_orc_death"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oidle0"]
+atlas = ExtResource("2_orc_idle")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oidle1"]
+atlas = ExtResource("2_orc_idle")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oidle2"]
+atlas = ExtResource("2_orc_idle")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oidle3"]
+atlas = ExtResource("2_orc_idle")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orun0"]
+atlas = ExtResource("3_orc_run")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orun1"]
+atlas = ExtResource("3_orc_run")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orun2"]
+atlas = ExtResource("3_orc_run")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orun3"]
+atlas = ExtResource("3_orc_run")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orun4"]
+atlas = ExtResource("3_orc_run")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orun5"]
+atlas = ExtResource("3_orc_run")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odth0"]
+atlas = ExtResource("4_orc_death")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odth1"]
+atlas = ExtResource("4_orc_death")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odth2"]
+atlas = ExtResource("4_orc_death")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odth3"]
+atlas = ExtResource("4_orc_death")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odth4"]
+atlas = ExtResource("4_orc_death")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odth5"]
+atlas = ExtResource("4_orc_death")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_orc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odth0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odth1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odth2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odth3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odth4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odth5")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oidle0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oidle1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oidle2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oidle3")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orun0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orun1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orun2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orun3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orun4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orun5")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_orc"]
+radius = 18.0
+height = 42.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_orc_hurt"]
+radius = 22.0
+height = 46.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_orc_sight"]
+radius = 280.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fg"]
+bg_color = Color(0.85, 0.2, 0.2, 1)
+
+[node name="Orc" type="CharacterBody2D"]
+script = ExtResource("1_orc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_orc")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_orc")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_orc_hurt")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -24.0
+offset_top = -36.0
+offset_right = 24.0
+offset_bottom = -30.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fg")
+max_value = 5.0
+value = 5.0
+show_percentage = false
+
+[node name="sight" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sight"]
+shape = SubResource("CircleShape2D_orc_sight")

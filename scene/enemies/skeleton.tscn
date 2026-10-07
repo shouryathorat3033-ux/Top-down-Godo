@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://c0rjn1knqu1ku"]
+
+[ext_resource type="Script" path="res://script/enemies/Skeleton.gd" id="1_skel"]
+[ext_resource type="Texture2D" uid="uid://skelidle" path="res://assets/images/Mobs/Skeleton Crew/Skeleton - Base/Idle/Idle-Sheet.png" id="2_skel_idle"]
+[ext_resource type="Texture2D" uid="uid://skelrun" path="res://assets/images/Mobs/Skeleton Crew/Skeleton - Base/Run/Run-Sheet.png" id="3_skel_run"]
+[ext_resource type="Texture2D" uid="uid://skeldeath" path="res://assets/images/Mobs/Skeleton Crew/Skeleton - Base/Death/Death-Sheet.png" id="4_skel_death"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skidle0"]
+atlas = ExtResource("2_skel_idle")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skidle1"]
+atlas = ExtResource("2_skel_idle")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skidle2"]
+atlas = ExtResource("2_skel_idle")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skidle3"]
+atlas = ExtResource("2_skel_idle")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skrun0"]
+atlas = ExtResource("3_skel_run")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skrun1"]
+atlas = ExtResource("3_skel_run")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skrun2"]
+atlas = ExtResource("3_skel_run")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skrun3"]
+atlas = ExtResource("3_skel_run")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skrun4"]
+atlas = ExtResource("3_skel_run")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skrun5"]
+atlas = ExtResource("3_skel_run")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skdth0"]
+atlas = ExtResource("4_skel_death")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skdth1"]
+atlas = ExtResource("4_skel_death")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skdth2"]
+atlas = ExtResource("4_skel_death")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skdth3"]
+atlas = ExtResource("4_skel_death")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skdth4"]
+atlas = ExtResource("4_skel_death")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skdth5"]
+atlas = ExtResource("4_skel_death")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_skel"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skdth0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skdth1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skdth2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skdth3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skdth4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skdth5")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skidle0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skidle1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skidle2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skidle3")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skrun0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skrun1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skrun2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skrun3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skrun4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skrun5")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_skel"]
+radius = 16.0
+height = 40.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_skel_hurt"]
+radius = 20.0
+height = 44.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_skel_sight"]
+radius = 320.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skbg"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skfg"]
+bg_color = Color(0.85, 0.2, 0.2, 1)
+
+[node name="Skeleton" type="CharacterBody2D"]
+script = ExtResource("1_skel")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_skel")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_skel")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_skel_hurt")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -24.0
+offset_top = -36.0
+offset_right = 24.0
+offset_bottom = -30.0
+theme_override_styles/background = SubResource("StyleBoxFlat_skbg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_skfg")
+max_value = 3.0
+value = 3.0
+show_percentage = false
+
+[node name="sight" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sight"]
+shape = SubResource("CircleShape2D_skel_sight")

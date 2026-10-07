@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://hudlayer001"]
+
+[ext_resource type="Script" path="res://script/ui/HUD.gd" id="1_hud"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="HeartsContainer" type="HBoxContainer" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 260.0
+offset_bottom = 50.0
+
+[node name="CoinLabel" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 55.0
+offset_right = 150.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+theme_override_font_sizes/font_size = 18
+text = "🪙 0"

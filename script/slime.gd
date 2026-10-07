@@ -1,4 +1,4 @@
-﻿extends CharacterBody2D
+extends CharacterBody2D
 
 const MAX_HP: int = 3
 const CHASE_SPEED: float = 80.0
@@ -59,6 +59,11 @@ func _physics_process(_delta: float) -> void:
 		# Flip sprite to face the player
 		if direction.x != 0:
 			animated_sprite.flip_h = direction.x < 0
+
+		# Contact damage to player
+		if global_position.distance_to(player.global_position) < 35.0:
+			if player.has_method("receive_damage"):
+				player.receive_damage(1)
 	else:
 		velocity = Vector2.ZERO
 
@@ -103,6 +108,8 @@ func die() -> void:
 	body_collision.set_deferred("disabled", true)
 	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)
 	animated_sprite.play("die")
+	GameManager.register_kill("Slime")
+
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
@@ -138,5 +145,3 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	_on_sight_body_exited(body)
-
-

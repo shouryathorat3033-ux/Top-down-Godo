@@ -1,16 +1,38 @@
 [gd_scene format=3 uid="uid://iehri7787sam"]
 
 [ext_resource type="PackedScene" uid="uid://level001tscn" path="res://scene/level.tscn" id="1_level"]
-[ext_resource type="PackedScene" uid="uid://b4cwr4tej61tt" path="res://scene/player.tscn" id="2_itxqv"]
-[ext_resource type="PackedScene" uid="uid://dd0kaobv3ebek" path="res://slime.tscn" id="3_v0l8b"]
+[ext_resource type="PackedScene" uid="uid://hudlayer001" path="res://scene/ui/hud.tscn" id="2_hud"]
+[ext_resource type="PackedScene" uid="uid://gameoverlayer001" path="res://scene/ui/game_over_screen.tscn" id="3_gameover"]
+[ext_resource type="PackedScene" uid="uid://b4cwr4tej61tt" path="res://scene/player.tscn" id="4_player"]
+[ext_resource type="PackedScene" uid="uid://dd0kaobv3ebek" path="res://slime.tscn" id="5_slime"]
+[ext_resource type="PackedScene" uid="uid://orcenemy001" path="res://scene/enemies/orc.tscn" id="6_orc"]
+[ext_resource type="PackedScene" uid="uid://skeletonenemy001" path="res://scene/enemies/skeleton.tscn" id="7_skel"]
+[ext_resource type="PackedScene" uid="uid://npcpeasant001" path="res://scene/npcs/peasant.tscn" id="8_npc"]
+[ext_resource type="PackedScene" uid="uid://chestobj001" path="res://scene/objects/chest.tscn" id="9_chest"]
 
-[node name="Main" type="Node2D" unique_id=2137562401]
+[node name="Main" type="Node2D"]
 y_sort_enabled = true
 
-[node name="LevelRoot" parent="." unique_id=220000001 instance=ExtResource("1_level")]
+[node name="HUD" parent="." instance=ExtResource("2_hud")]
 
-[node name="player" parent="." unique_id=1617934449 instance=ExtResource("2_itxqv")]
-position = Vector2(197, 329)
+[node name="GameOverScreen" parent="." instance=ExtResource("3_gameover")]
 
-[node name="slime" parent="." unique_id=1214454613 instance=ExtResource("3_v0l8b")]
-position = Vector2(400, 329)
+[node name="LevelRoot" parent="." instance=ExtResource("1_level")]
+
+[node name="NPC_Peasant" parent="." instance=ExtResource("8_npc")]
+position = Vector2(280, 240)
+
+[node name="Chest" parent="." instance=ExtResource("9_chest")]
+position = Vector2(350, 480)
+
+[node name="player" parent="." instance=ExtResource("4_player")]
+position = Vector2(180, 300)
+
+[node name="slime" parent="." instance=ExtResource("5_slime")]
+position = Vector2(480, 300)
+
+[node name="Orc" parent="." instance=ExtResource("6_orc")]
+position = Vector2(720, 260)
+
+[node name="Skeleton" parent="." instance=ExtResource("7_skel")]
+position = Vector2(620, 420)
