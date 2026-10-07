@@ -1,5 +1,5 @@
 ## Orc.gd — Orc enemy, extends BaseEnemy
-extends "res://script/enemies/BaseEnemy.gd"
+extends BaseEnemy
 
 func _ready() -> void:
 	# Orc stats — tougher than slime
@@ -11,4 +11,4 @@ func _ready() -> void:
 	anim_idle = "idle"
 	anim_run = "run"
 	anim_death = "death"
-	super._ready()
+	super()

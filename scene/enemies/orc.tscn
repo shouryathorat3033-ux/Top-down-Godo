@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://orcenemy001"]
+[gd_scene format=3]
 
 [ext_resource type="Script" path="res://script/enemies/Orc.gd" id="1_orc"]
-[ext_resource type="Texture2D" uid="uid://orcidle" path="res://assets/images/Mobs/Orc Crew/Orc/Idle/Idle-Sheet.png" id="2_orc_idle"]
-[ext_resource type="Texture2D" uid="uid://orcrun" path="res://assets/images/Mobs/Orc Crew/Orc/Run/Run-Sheet.png" id="3_orc_run"]
-[ext_resource type="Texture2D" uid="uid://orcdeath" path="res://assets/images/Mobs/Orc Crew/Orc/Death/Death-Sheet.png" id="4_orc_death"]
+[ext_resource type="Texture2D" path="res://assets/images/Mobs/Orc Crew/Orc/Idle/Idle-Sheet.png" id="2_orc_idle"]
+[ext_resource type="Texture2D" path="res://assets/images/Mobs/Orc Crew/Orc/Run/Run-Sheet.png" id="3_orc_run"]
+[ext_resource type="Texture2D" path="res://assets/images/Mobs/Orc Crew/Orc/Death/Death-Sheet.png" id="4_orc_death"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oidle0"]
 atlas = ExtResource("2_orc_idle")

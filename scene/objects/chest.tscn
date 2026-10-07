@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://chestobj001"]
+[gd_scene format=3]
 
 [ext_resource type="Script" path="res://script/objects/Chest.gd" id="1_chest"]
-[ext_resource type="Texture2D" uid="uid://c5fchest" path="res://assets/images/Objects/ChestAnim.png" id="2_chest_tex"]
+[ext_resource type="Texture2D" path="res://assets/images/Objects/ChestAnim.png" id="2_chest_tex"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_closed"]
 atlas = ExtResource("2_chest_tex")

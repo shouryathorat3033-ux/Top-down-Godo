@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://b333l31ix8eqq"]
+[gd_scene format=3]
 
 [ext_resource type="Script" path="res://script/npcs/NPC.gd" id="1_npc"]
-[ext_resource type="Texture2D" uid="uid://peasantidle" path="res://assets/images/Npc's/Citizen_F/Peasant_A/Idle/Idle-Sheet.png" id="2_peasant_idle"]
-[ext_resource type="Texture2D" uid="uid://peasantwalk" path="res://assets/images/Npc's/Citizen_F/Peasant_A/Walk/Walk-Sheet.png" id="3_peasant_walk"]
+[ext_resource type="Texture2D" path="res://assets/images/Npc's/Citizen_F/Peasant_A/Idle/Idle-Sheet.png" id="2_peasant_idle"]
+[ext_resource type="Texture2D" path="res://assets/images/Npc's/Citizen_F/Peasant_A/Walk/Walk-Sheet.png" id="3_peasant_walk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pidle0"]
 atlas = ExtResource("2_peasant_idle")

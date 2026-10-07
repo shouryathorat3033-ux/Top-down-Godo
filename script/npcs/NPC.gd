@@ -10,7 +10,7 @@ var _dialogue_open: bool = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var interaction_label: Label = $InteractionLabel
-@onready var dialogue_box: Control = $DialogueBox
+@onready var dialogue_box: CanvasLayer = $DialogueBox
 @onready var dialogue_name_label: Label = $DialogueBox/Panel/VBox/NameLabel
 @onready var dialogue_text_label: Label = $DialogueBox/Panel/VBox/TextLabel
 @onready var interaction_area: Area2D = $InteractionArea

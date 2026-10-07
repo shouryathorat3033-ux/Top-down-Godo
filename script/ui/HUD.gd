@@ -4,15 +4,12 @@ extends CanvasLayer
 @onready var hearts_container: HBoxContainer = $HeartsContainer
 @onready var coin_label: Label = $CoinLabel
 
-const HEART_FULL  = preload("res://assets/ui/heart_full.png")  if ResourceLoader.exists("res://assets/ui/heart_full.png")  else null
-const HEART_EMPTY = preload("res://assets/ui/heart_empty.png") if ResourceLoader.exists("res://assets/ui/heart_empty.png") else null
-
 var _heart_labels: Array[Label] = []
 
 
 func _ready() -> void:
 	GameManager.player_hp_changed.connect(_on_hp_changed)
-	GameManager.item_collected.connect(_on_item_collected)
+	GameManager.player_coins_changed.connect(_update_coins)
 	_build_hearts(GameManager.player_max_hp)
 	_update_hearts(GameManager.player_hp)
 	_update_coins(GameManager.player_coins)

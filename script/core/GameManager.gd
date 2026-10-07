@@ -3,6 +3,7 @@
 extends Node
 
 signal player_hp_changed(current: int, max_hp: int)
+signal player_coins_changed(coins: int)
 signal player_died
 signal enemy_killed(enemy_name: String)
 signal item_collected(item_name: String)
@@ -34,6 +35,7 @@ func take_damage(amount: int) -> void:
 
 func add_coin(amount: int = 1) -> void:
 	player_coins += amount
+	player_coins_changed.emit(player_coins)
 
 func register_kill(enemy_name: String) -> void:
 	enemies_killed += 1
@@ -45,3 +47,4 @@ func reset() -> void:
 	enemies_killed = 0
 	current_state = State.PLAYING
 	player_hp_changed.emit(player_hp, player_max_hp)
+	player_coins_changed.emit(player_coins)
