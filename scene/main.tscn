@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://iehri7787sam"]
+
+[ext_resource type="PackedScene" uid="uid://level001tscn" path="res://scene/level.tscn" id="1_level"]
+[ext_resource type="PackedScene" uid="uid://b4cwr4tej61tt" path="res://scene/player.tscn" id="2_itxqv"]
+[ext_resource type="PackedScene" uid="uid://dd0kaobv3ebek" path="res://slime.tscn" id="3_v0l8b"]
+
+[node name="Main" type="Node2D" unique_id=2137562401]
+y_sort_enabled = true
+
+[node name="LevelRoot" parent="." unique_id=220000001 instance=ExtResource("1_level")]
+
+[node name="player" parent="." unique_id=1617934449 instance=ExtResource("2_itxqv")]
+position = Vector2(197, 329)
+
+[node name="slime" parent="." unique_id=1214454613 instance=ExtResource("3_v0l8b")]
+position = Vector2(400, 329)
