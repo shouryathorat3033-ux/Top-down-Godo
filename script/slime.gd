@@ -1,4 +1,4 @@
-extends CharacterBody2D
+﻿extends CharacterBody2D
 
 const MAX_HP: int = 3
 const CHASE_SPEED: float = 80.0
@@ -138,3 +138,5 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	_on_sight_body_exited(body)
+
+
