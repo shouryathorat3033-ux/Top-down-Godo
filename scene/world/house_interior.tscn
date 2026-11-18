@@ -1,4 +1,28 @@
-[gd_scene format=3]
+Fix the current environment and remove the unwanted GAME OVER screen.
+
+**1. Environment**
+- Continue building the village according to my previously uploaded reference image.
+- Use only the original tileset assets.
+- Remove all blank ground gaps, black patches and incorrect tile placements.
+- Fix river edges using the actual shoreline and corner tiles.
+- Add the missing flowers, small plants and grass decorations.
+- Maintain separate GroundLayer, EnvironmentLayer and ForegroundLayer.
+- Configure proper player overlap, Y-sorting and collisions.
+
+**2. Remove GAME OVER screen**
+- Inspect the current scene hierarchy and identify what is displaying the GAME OVER overlay.
+- Remove its automatic appearance during normal gameplay.
+- Remove the Restart and Quit to Desktop overlay from the normal game view.
+- Keep the player able to explore the environment without this screen blocking the map.
+- If a game-over system is already implemented, preserve its functionality but trigger it only when the player actually loses.
+
+**3. Final testing**
+- Run the main game scene.
+- Make sure the GAME OVER screen does not appear at startup.
+- Verify player movement, environment visibility, collisions and layer overlap.
+- Do not break existing gameplay systems or modify unrelated scripts.
+
+Do not just hide the overlay in the editor. Fix the actual cause of it appearing during normal gameplay.[gd_scene format=3]
 
 [ext_resource type="Texture2D" path="res://assets/images/interor/Walls.png" id="1_walls"]
 [ext_resource type="Texture2D" path="res://assets/images/interor/Props.png" id="2_props"]

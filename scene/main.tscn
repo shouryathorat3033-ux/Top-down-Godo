@@ -20,19 +20,22 @@ y_sort_enabled = true
 [node name="LevelRoot" parent="." unique_id=2000874068 instance=ExtResource("1_level")]
 
 [node name="NPC_Peasant" parent="." unique_id=2134825999 instance=ExtResource("8_npc")]
-position = Vector2(720, 520)
+position = Vector2(560, 440)
 
 [node name="Chest" parent="." unique_id=340997961 instance=ExtResource("9_chest")]
-position = Vector2(230, 290)
+position = Vector2(624, 144)
+
+[node name="Chest2" parent="." unique_id=340997962 instance=ExtResource("9_chest")]
+position = Vector2(688, 160)
 
 [node name="player" parent="." unique_id=2053370559 instance=ExtResource("4_player")]
-position = Vector2(360, 530)
+position = Vector2(160, 432)
 
 [node name="slime" parent="." unique_id=1474563183 instance=ExtResource("5_slime")]
-position = Vector2(200, 750)
+position = Vector2(240, 540)
 
 [node name="Orc" parent="." unique_id=991449321 instance=ExtResource("6_orc")]
-position = Vector2(1360, 480)
+position = Vector2(896, 480)
 
 [node name="Skeleton" parent="." unique_id=183623399 instance=ExtResource("7_skel")]
-position = Vector2(1420, 780)
+position = Vector2(896, 160)
